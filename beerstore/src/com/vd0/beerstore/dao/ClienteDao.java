@@ -8,7 +8,7 @@ import com.vd0.beerstore.entity.Cliente;
 
 
 /**
- * @author Marcio Cantos
+ * @author Marcio Cantos.
  *
  */
 public class ClienteDao implements Dao<Cliente> {
