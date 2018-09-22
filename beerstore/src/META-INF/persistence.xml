@@ -15,6 +15,23 @@
 		<class>com.vd0.beerstore.entity.beer.Wishlist</class>
 		
 		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://node171823-env-2719515.jelasticlw.com.br/mysql" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="OHTcza81217" />
+
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			
+			<!-- <property name="hibernate.default_schema" value="public"/> -->
+		</properties>
+
+<!--
+		<properties>
 			<property name="hibernate.dialect" 
 				value="org.hibernate.dialect.H2Dialect"/>
 
@@ -31,5 +48,7 @@
 			
 			<property name="hibernate.default_schema" value="public"/>
 		</properties>
+		
+-->
 	</persistence-unit>
 </persistence>

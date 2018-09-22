@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * @author Marcio Cantos
  *
@@ -22,8 +24,9 @@ public class Cliente {
 	private String nome;
 	private String login;
 	private String senha;
-	private String cpf;
+	private String email;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy="cliente", cascade = CascadeType.ALL)
 	private List<Endereco> enderecos;
 	
@@ -62,12 +65,12 @@ public class Cliente {
 		this.senha = senha;
 	}
 
-	public String getCPF() {
-		return cpf;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCPF(String cpf) {
-		this.cpf = cpf;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public List<Endereco> getEnderecos() {

@@ -2,9 +2,11 @@ package com.vd0.beerstore.service;
 
 import java.util.List;
 
+import com.vd0.beerstore.dao.ClienteDao;
 import com.vd0.beerstore.dao.Dao;
 import com.vd0.beerstore.dao.EnderecoDao;
 import com.vd0.beerstore.dao.FabricaDao;
+import com.vd0.beerstore.entity.Cliente;
 import com.vd0.beerstore.entity.Endereco;
 
 
@@ -13,7 +15,11 @@ public class EnderecoService implements IService<Endereco> {
 	Dao<Endereco> enderecoDao = FabricaDao.createDaoEndereco();
 
 	@Override
-	public void adicionarCliente(Endereco endereco) {		
+	public void adicionarCliente(Endereco endereco) {	
+		
+		Cliente c = new ClienteDao().buscaPorId(endereco.getCliente().getId());
+		endereco.setCliente(c);
+		
 		enderecoDao.adicionar(endereco);
 	}
 	

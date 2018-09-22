@@ -7,12 +7,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Endereco {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;	
+	private Long id;
+	
+	@JsonBackReference
 	@ManyToOne(fetch=FetchType.LAZY)
 	private Cliente cliente;
 	private String logradouro;
